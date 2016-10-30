@@ -1,0 +1,46 @@
+.jumbotron {
+  margin-top: 100px;
+}
+
+.large-photo {
+  margin-bottom: 1em;
+}
+
+.large-photo img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.lightbox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: black;
+  padding: 1em;
+}
+
+.lightbox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.color-control label {
+  display: inline-block;
+  font-weight: bold;
+  width: 100px;
+}
+
+.panel {
+  margin-top: 1em;
+}
+
+.toggle-button {
+  margin-top: 1em;
+}
+
+.done-editing {
+  margin-top: 1em;
+}

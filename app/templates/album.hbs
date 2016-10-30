@@ -1,0 +1,36 @@
+
+
+<div class="container">
+  <h1>Photo Album</h1>
+
+  <div class="row">
+    <div class="col-md-8 col-md-push-4">
+      {{outlet}}
+    </div>
+
+    <div class="col-md-4 col-md-pull-8">
+      <p>
+        <label>
+          {{input type='checkbox' checked=showLargeThumbnails}}
+          Large Thumbnails
+        </label>
+      </p>
+
+      <div class="thumbnails row">
+        {{#each model as |photo|}}
+
+          <div class={{if showLargeThumbnails 'col-md-6' 'col-md-4'}}>
+            {{#link-to 'album.photo' photo class='thumbnail'}}
+              <img src={{photo.thumbUrl}}>
+              <div class="caption text-center">
+                <small>{{photo.name}}</small>
+              </div>
+            {{/link-to}}
+          </div>
+
+        {{/each}}
+      </div>
+
+    </div>
+  </div>
+</div>

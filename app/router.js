@@ -7,6 +7,15 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('album', function() {
+    this.route('photo', {
+      path: '/photos/:photo_id'
+    });
+  });
+
+  this.route('lightbox', {
+    path: '/lightbox/:photo_id'
+  });
 });
 
 export default Router;

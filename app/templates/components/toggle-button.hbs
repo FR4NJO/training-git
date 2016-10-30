@@ -1,0 +1,7 @@
+{{#if isShowing}}
+  {{yield (action 'hide')}}
+{{else}}
+  <p class="text-center">
+    <button {{action 'show'}} class='toggle-button btn btn-default'>{{buttonText}}</button>
+  </p>
+{{/if}}

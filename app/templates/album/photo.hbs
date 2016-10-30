@@ -1,0 +1,54 @@
+<h2>
+	{{#link-to "lightbox" model class='btn btn-default pull-right'}}
+	<i class="glyphicon glyphicon-resize-full"></i> View full screen {{/link-to}} {{model.name}}
+</h2>
+
+<div class="large-photo">
+	<img src={{model.largeUrl}} style={{photoStyle}}> {{photo.name}}
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<span {{action "doPrev"}} class='btn btn-default btn-block'>
+      <i class="glyphicon glyphicon-step-backward"></i>
+      Previous image
+    </span>
+
+	</div>
+	<div class="col-md-4">
+		<span {{action actionName}} class='btn btn-default btn-block'>
+      {{if isRunning 'Stop Slideshow' 'Start Slideshow'}}
+    </span>
+	</div>
+	<div class="col-md-4">
+		<span {{action "doNext"}} class='btn btn-default btn-block'>
+      Next image
+      <i class="glyphicon glyphicon-step-forward"></i>
+    </span>
+	</div>
+</div>
+
+<br />
+
+<div class="row">
+	<div class="col-md-12 text-center">
+		Slidespeed: {{slideSpeed}}
+		<br /> {{input class='form-control' type='range' min=0 max=1000 value=slideSpeed}}
+	</div>
+</div>
+<br /> {{#toggle-button buttonText="Show Color Controls" as |hideAction|}}
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Color controls</h3>
+	</div>
+	<div class="panel-body">
+		{{color-control title="Grayscale" value= grayscale}} {{color-control title="Hue" value=hue max=360}} {{color-control title="Blur"
+		value=blur max=25}} {{color-control title="Contrast" value=contrast max=200}}
+    <br />
+    <div class="text-center">
+		  <div class=""><button onclick={{action 'setDefault'}} class='btn btn-default'>Set Default</button></div>
+		<div class="done-editing"><button onclick={{hideAction}} class='btn btn-default'>Done Editing</button></div>
+    </div>
+	</div>
+</div>
+{{/toggle-button}}
